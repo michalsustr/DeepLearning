@@ -46,7 +46,7 @@ model.add(LSTM(128, return_sequences=False))
 model.add(Dropout(0.2))
 model.add(Dense(output_dim))
 model.add(Activation("softmax"))
-model.compile(loss="categorical_crossentropy", optimizer="rmsprop")
+model.compile(loss="binary_crossentropy", optimizer="rmsprop")
 
 print "Start training"
 # and now train the model
