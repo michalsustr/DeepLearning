@@ -40,10 +40,7 @@ print "Loading data"
 
 print "Setting up model"
 model = Sequential()
-model.add(LSTM(128, input_shape=(maxlen, input_dim), return_sequences=True))
-model.add(Dropout(0.2))
-model.add(LSTM(128, return_sequences=False))
-model.add(Dropout(0.2))
+model.add(LSTM(64, input_shape=(maxlen, input_dim), return_sequences=False))
 model.add(Dense(output_dim))
 model.add(Activation("softmax"))
 model.compile(loss="binary_crossentropy", optimizer="rmsprop")
